@@ -15,6 +15,7 @@ public class CfComponent extends DefaultComponent{
 	protected Endpoint createEndpoint(String uri, String remaining,
 			Map<String, Object> parameters) throws Exception {
 		
+		
 		LOG.debug("createEndpoint called");
 		
 		Endpoint endpoint = new CfEndpoint(uri, this);
