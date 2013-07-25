@@ -29,7 +29,7 @@ public class CfConsumer extends DefaultConsumer{
 
 		LOG.debug("doStart called");
 		
-		MyServer server = new MyServer();
+		MyServer server = new MyServer(this);
 		server.start();
 		super.doStart();
 	}

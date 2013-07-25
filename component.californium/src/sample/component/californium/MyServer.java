@@ -8,9 +8,17 @@ import ch.ethz.inf.vs.californium.endpoint.ServerEndpoint;
 
 public class MyServer extends ServerEndpoint{
 
-	public MyServer() throws SocketException {
+	CfConsumer consumer;
+	
+	public MyServer(CfConsumer consumer) throws SocketException {
 		super();
-		addResource(new A());
+		this.consumer = consumer;
+		addResource(new A(this));
 	}
+	
+	public CfConsumer getConsumer(){
+		return consumer;
+	}
+	
 
 }
