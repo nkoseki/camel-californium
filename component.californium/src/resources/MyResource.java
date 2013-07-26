@@ -9,26 +9,22 @@ import ch.ethz.inf.vs.californium.coap.registries.MediaTypeRegistry;
 import ch.ethz.inf.vs.californium.endpoint.resources.LocalResource;
 import org.apache.camel.Exchange;
 
-public class A extends LocalResource {
+public class MyResource extends LocalResource {
 
 	MyServer server;
 	
-	public A(MyServer server){
-		super("Hello");
-		setTitle("Hello");
-		setResourcesPath("aaa");
+	public MyResource(MyServer server){
+
+		//super("Hello");
+		//setTitle("Hello");
+		//setResourcesPath("aaa");
+		super(server.getConsumer().getEndpoint().getUrl());
+		setTitle(server.getConsumer().getEndpoint().getUrl());
+		setResourcesPath(server.getConsumer().getEndpoint().getPath());
 		this.server = server;
+		
 	}
 
-//	public A() {
-//		this("Hello", "aaaaa");
-//	}
-//
-//	public A(String str1, String str2) {
-//		super(str1);
-//		setTitle(str1);
-//		setResourcesPath(str2);
-//	}
 	
 	@Override
 	public void performGET(GETRequest request) {

@@ -39,4 +39,7 @@ public class CfConsumer extends DefaultConsumer{
 		super.doStop();
 	}
 
+	public CfEndpoint getEndpoint(){
+		return endpoint;
+	}
 }

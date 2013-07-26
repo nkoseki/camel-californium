@@ -11,6 +11,9 @@ public class CfEndpoint extends DefaultEndpoint{
 
 	private static final transient Log LOG = LogFactory.getLog(CfEndpoint.class);
 	
+	private String url;
+	private String path;
+	
 	public CfEndpoint(){
 	}
 	
@@ -33,6 +36,22 @@ public class CfEndpoint extends DefaultEndpoint{
 	@Override
 	public boolean isSingleton() {
 		return true;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
 	}
 
 }
